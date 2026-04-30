@@ -1,0 +1,20 @@
+[project]
+name = "regex-lens"
+version = "0.1.0"
+description = "CLI tool that explains regex patterns in Markdown with Mermaid diagrams."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+regex-lens = "regex_lens.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
