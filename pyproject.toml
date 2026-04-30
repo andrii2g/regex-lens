@@ -3,7 +3,7 @@ name = "regex-lens"
 version = "0.1.0"
 description = "CLI tool that explains regex patterns in Markdown with Mermaid diagrams."
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.12"
 dependencies = []
 
 [project.scripts]

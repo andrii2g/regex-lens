@@ -4,28 +4,59 @@
 
 ## Requirements
 
-- Python 3.14
+- Python 3.12+
 
-## Local Setup
+## Install
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
 python -m pip install -e .
 ```
+
+If your Linux distribution blocks direct `pip` installs into the system Python with an `externally-managed-environment` error, use the virtual environment flow above.
 
 This project uses a `src/` layout, so install it before running `python -m regex_lens` or `regex-lens`.
 
 ## Usage
 
+Create a file containing one regex pattern, for example:
+
+```text
+pattern.txt
+```
+
+with contents:
+
+```regex
+^(?<date>\d{4}-\d{2}-\d{2})$
+```
+
+Run the tool with the installed console script:
+
 ```bash
 regex-lens pattern.txt
 regex-lens pattern.txt --output explained.md
+```
+
+Or run it as a Python module after installation:
+
+```bash
 python -m regex_lens pattern.txt
+python -m regex_lens pattern.txt --output explained.md
 ```
 
 Default output:
 
 ```text
 ./pattern.explanation.md
+```
+
+## Test
+
+```bash
+python -m unittest discover -s tests
 ```
 
 ## Sample Input
